@@ -2,10 +2,6 @@
 > 
 使用 ts-bin 可以让你实现 build ts
 
-## CHANGELOG
-
-[点击查看](./CHANGELOG.md)
-
 ## Install
 
 ```bash
@@ -99,3 +95,5 @@ $ ts-bin dev --app
 
 - `    --name [value]`, '应用名称; 默认 package.json 的 name 字段
 
+
+### TIPS
