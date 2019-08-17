@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "allowJs": false,
+      "module": "commonjs",
+      "target": "es2015",
+      "lib": [
+        "esnext"
+      ],
+      "types": [
+        "node",
+        "mocha"
+      ],
+      "typeRoots": [
+        "../typings",
+        "../node_modules/@types"
+      ],
+      "noImplicitAny": false,
+      "moduleResolution": "node",
+      "sourceMap": false,
+      "baseUrl": "./",
+      "outDir": "../dist",
+      "experimentalDecorators": true,
+      "noEmitOnError": true,
+      "noErrorTruncation": true
+    },
+    "include": [
+      "./**/*.ts",
+      "./**/*.js"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }

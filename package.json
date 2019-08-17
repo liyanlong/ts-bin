@@ -1,0 +1,70 @@
+{
+  "name": "ts-bin",
+  "version": "1.0.0",
+  "description": "ts项目启动编译容器",
+  "main": "index.js",
+  "scripts": {
+    "dev:koa": "node ./bin/ts-bin dev --app examples/koa/app.ts",
+    "dev:express": "node ./bin/ts-bin dev --app examples/express/app.ts",
+    "watch:koa": "node ./bin/ts-bin watch --app examples/koa/app.ts --watch \"examples/koa/*\"",
+    "watch:express": "node ./bin/ts-bin watch --app examples/express/app.ts --watch \"examples/express/*\"",
+    "build": "node ./bin/ts-bin build --name example --ignore-install --src examples/ --dist dist/ --tsconfig examples/tsconfig.json --after-build \"node ./build/test.js\"",
+    "build:tar": "node ./bin/ts-bin build --name example --nodemodules-tar --src examples/ --tsconfig examples/tsconfig.json",
+    "build:source": "node ./bin/ts-bin build --name example --ignore-install --src examples/ --sourcemap",
+    "start:koa": "node ./bin/ts-bin start --app dist/koa/app.js",
+    "start:express": "node ./bin/ts-bin start --app dist/express/app.js",
+    "daemon:koa": "node ./bin/ts-bin start --app dist/koa/app.js  --name koa-example --daemon",
+    "daemon:express": "node ./bin/ts-bin start --app dist/express/app.js  --name express-example --daemon",
+    "stop:koa": "node ./bin/ts-bin stop --name koa-example",
+    "stop:express": "node ./bin/ts-bin stop --name express-example",
+    "help": "node ./bin/ts-bin --help",
+    "version": "node ./bin/ts-bin --version",
+    "custom:watch": "node ./examples/bin/custom-bin local-watch --app examples/express/app.ts --env custotm-local",
+    "custom:test": "node ./examples/bin/custom-bin local-test",
+    "debug": "node ./bin/ts-bin debug --app ./examples/simple/debug.js",
+    "debug:watch": "node ./bin/ts-bin debug --app ./examples/simple/debug --inspect --watch \"./examples/*\"",
+    "test": "mocha --require ts-node/register ./test/*.spec.ts"
+  },
+  "bin": {
+    "ts-bin": "bin/ts-bin.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "build/",
+    "index.js",
+    "gulpfile.js",
+    "README.md",
+    "tsconfig.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/liyanlong/ts-bin.git"
+  },
+  "keywords": [
+    "ts",
+    "ts-bin"
+  ],
+  "author": "wayenli",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "express": "^4.16.4",
+    "koa": "^2.6.2",
+    "pkgfiles": "^2.3.2"
+  },
+  "dependencies": {
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "commander": "^2.19.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-tar": "^2.1.0",
+    "gulp-tnpm-install": "^1.1.0",
+    "mocha": "^6.1.3",
+    "nodemon": "^1.18.6",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
