@@ -4,7 +4,6 @@ const gulp = require('gulp');
 const del = require('del');
 const tar = require('gulp-tar');
 const gzip = require('gulp-gzip');
-const install = require("gulp-tnpm-install");
 const path = require('path');
 
 const srcPath = path.resolve(process.cwd(), process.env.TS_BIN_SRC_PATH);
@@ -25,7 +24,7 @@ function build_path() {
 gulp.task('copy', () => {
     const isApp = !!~process.argv.indexOf('--app');
     const ignoreInstall = !!~process.argv.indexOf('--ignore-install');
-    const files = [src('**/*.js'), src('**/*.json'), src('**/*.*(proto|txt|node|ini|yml)')];
+    const files = [src('**/*.js'), src('**/*.json'), src('**/*.*(proto|txt|node|ini|yml|conf|xml)')];
 
     if (isApp) {
         files.push(src('../package.json'));
