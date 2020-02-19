@@ -4,9 +4,9 @@
   "description": "ts项目启动编译容器",
   "main": "index.js",
   "scripts": {
-    "dev:koa": "node ./bin/ts-bin dev --app examples/koa/app.ts",
+    "dev:koa": "node ./bin/ts-bin dev --app examples/koa/app.ts --tsconfig tsconfig.json",
     "dev:express": "node ./bin/ts-bin dev --app examples/express/app.ts",
-    "watch:koa": "node ./bin/ts-bin watch --app examples/koa/app.ts --watch \"examples/koa/*\"",
+    "watch:koa": "node ./bin/ts-bin watch --app examples/koa/app.ts --watch \"examples/koa/*\" --tsconfig tsconfig.json",
     "watch:express": "node ./bin/ts-bin watch --app examples/express/app.ts --watch \"examples/express/*\"",
     "build": "node ./bin/ts-bin build --name example --ignore-install --src examples/ --dist dist/ --tsconfig examples/tsconfig.json --after-build \"node ./build/test.js\"",
     "build:tar": "node ./bin/ts-bin build --name example --nodemodules-tar --src examples/ --tsconfig examples/tsconfig.json",
@@ -21,7 +21,7 @@
     "version": "node ./bin/ts-bin --version",
     "custom:watch": "node ./examples/bin/custom-bin local-watch --app examples/express/app.ts --env custotm-local",
     "custom:test": "node ./examples/bin/custom-bin local-test",
-    "debug": "node ./bin/ts-bin debug --app ./examples/simple/debug.js",
+    "debug": "node ./bin/ts-bin debug --app ./examples/simple/debug.js --tsconfig tsconfig.json",
     "debug:watch": "node ./bin/ts-bin debug --app ./examples/simple/debug --inspect --watch \"./examples/*\"",
     "my:test": "node ./bin/ts-test  --findRelatedTests test/*.ts"
   },

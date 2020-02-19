@@ -24,6 +24,8 @@ $ ts-bin dev --app
 - `    --app [value]` 启动入口; 默认 ./src/app.ts
 - `    --exec "[value]"` 启动脚本; 默认 node
 - `    --args "[value]"` 额外参数; 默认 无
+- `   --tsconfig [value]` typescript文件配置; 默认 process.cwd() + /tsconfig.json
+
 
 ### ts-bin watch
 启动 watch 模式, 默认 NODE_ENV = 'local' (可以指定), 监听文件修改后重启服务
@@ -38,6 +40,8 @@ $ ts-bin dev --app
 - `-i, --ignore "[value]"` nodemon 忽略监控文件列表; 默认 无
 - `    --exec "[value]"` nodemon启动脚本
 - `    --args "[value]"` 额外参数; 默认 无
+- `   --tsconfig [value]` typescript文件配置; 默认 process.cwd() + /tsconfig.json
+
 
 ### ts-bin debug
 启动调试模式, 类似于 node --inspect
@@ -54,6 +58,7 @@ $ ts-bin dev --app
 - `-i, --ignore "[value]"` nodemon 忽略监控文件列表; 默认 无
 - `    --exec "[value]"` nodemon启动脚本
 - `    --args "[value]"` 额外参数; 默认 无
+- `   --tsconfig [value]` typescript文件配置; 默认 process.cwd() + /tsconfig.json
 
 优先级:  --inspect-brk value > --inspect value > 默认值 '--inspect=0.0.0.0:9229'
 
