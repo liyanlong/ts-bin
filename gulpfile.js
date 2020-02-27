@@ -16,6 +16,9 @@ function src(file) {
 function dist(file) {
     return path.join(distPath, '/', file || '');
 }
+function cwd(file) {
+    return path.join(process.cwd(), '/', file || '');
+}
 
 function build_path() {
     return path.join(process.cwd(), './build/**');
@@ -42,6 +45,17 @@ gulp.task('copy-build', () => {
             )
         );
 });
+
+gulp.task('copy-nodemodules', () => {
+    const files = [cwd('node_modules/**')];
+
+    return gulp.src(files)
+    .pipe(
+        gulp.dest(
+            path.join(dist('node_modules'))
+        )
+    );
+})
 
 // 将node_modules 压缩一个包
 gulp.task('tar-nodemodules', () => {
