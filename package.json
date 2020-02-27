@@ -1,6 +1,6 @@
 {
   "name": "ts-bin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ts项目启动编译容器",
   "main": "index.js",
   "scripts": {
