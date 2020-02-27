@@ -8,7 +8,7 @@
       ],
       "types": [
         "node",
-        "mocha"
+        "jest"
       ],
       "typeRoots": [
         "../typings",
