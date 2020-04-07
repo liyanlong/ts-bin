@@ -1,5 +1,5 @@
 ## ts-bin
-> 
+>
 使用 ts-bin 可以让你实现 build ts
 
 ## Install
@@ -15,7 +15,7 @@ ts-bin dev --app ./src/app.ts
 启动 dev 模式, 默认 NODE_ENV = 'local' (可以指定)
 
 ```bash
-$ ts-bin dev --app 
+$ ts-bin dev --app
 ```
 **options**
 - `       --env` 环境变量; 默认 local
@@ -76,7 +76,7 @@ $ ts-bin dev --app
 - `   --dist "[value]"` 编译后目录; 默认 ./dist/
 - `   --nodemodules-tar` 是否打包node_modules
 - `   --after-build "[value]"` 编译后执行命令
-
+- `   --copy-nodemodules` 是否copy node_modules目录，默认采用 install 模式
 
 ### ts-bin start
 启动 build 后的js项目, 试用任何启动后台进程的node 服务, 如 koa,express等

@@ -26,9 +26,7 @@ function build_path() {
 
 gulp.task('copy', () => {
     const isApp = !!~process.argv.indexOf('--app');
-    const ignoreInstall = !!~process.argv.indexOf('--ignore-install');
-    const files = [src('**/*.js'), src('**/*.json'), src('**/*.*(proto|txt|node|ini|yml|conf|xml)')];
-
+    const files = [src('**/*.*(js|json|proto|txt|node|ini|yml|conf|html|xhtml|xml|env)')];
     if (isApp) {
         files.push(src('../package.json'));
     }
