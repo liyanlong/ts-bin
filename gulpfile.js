@@ -26,7 +26,7 @@ function build_path() {
 
 gulp.task('copy', () => {
     const isApp = !!~process.argv.indexOf('--app');
-    const files = [src('**/*.*(js|json|proto|txt|node|ini|yml|conf|html|xhtml|xml|env)')];
+    const files = [src('**/*'), '!**/*.ts', '!**/tsconfig.json'];
     if (isApp) {
         files.push(src('../package.json'));
     }
